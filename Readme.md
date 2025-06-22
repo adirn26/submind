@@ -27,7 +27,7 @@ Whether you're a business user, analyst, or developer — just ask your question
 - MongoDB Atlas or a local MongoDB instance
 
 ```bash
-git clone https://github.com/yourusername/submind.git
+git clone https://github.com/adirn26/submind.git
 cd submind
 pip install -r requirements.txt
 adk web
