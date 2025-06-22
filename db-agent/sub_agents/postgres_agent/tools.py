@@ -2,6 +2,21 @@ import os
 import psycopg2
 from google.adk.tools import ToolContext
 from psycopg2.extras import RealDictCursor
+from decimal import Decimal
+from datetime import date, datetime
+
+def json_safe(obj):
+    if isinstance(obj, Decimal):
+        return float(obj)
+    elif isinstance(obj, (date, datetime)):
+        return obj.isoformat()
+    elif isinstance(obj, dict):
+        return {k: json_safe(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [json_safe(i) for i in obj]
+    else:
+        return obj
+
 
 
 def get_postgres_connection():
@@ -22,7 +37,8 @@ async def call_pg_query(sql: str, tool_context: ToolContext):
     rows = cur.fetchall()
     cur.close()
     conn.close()
-    return rows
+    return json_safe(rows)
+
 
 
 async def call_pg_schema_info(tool_context: ToolContext):

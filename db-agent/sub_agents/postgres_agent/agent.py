@@ -16,7 +16,7 @@ Return the following:
 - "data": the top rows of the result
 """
 
-postgres_agent = Agent(
+root_agent = Agent(
     name="postgres_agent",
     model="gemini-2.0-flash",
     description="Agent to query Postgres DB",
