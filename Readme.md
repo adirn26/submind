@@ -1,4 +1,4 @@
-# 🧠 SubMind – Speak to Your Data, Anywhere
+# SubMind – Speak to Your Data, Anywhere
 
 SubMind is a multi-agent system that allows users to query **any database** — MongoDB, PostgreSQL, and more — using **natural language**. Built using **Google’s Agent Development Kit (ADK)** and **Gemini Flash**, it abstracts away complex querying, schema knowledge, and DB-specific syntax.
 
