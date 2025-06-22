@@ -17,6 +17,22 @@ Whether you're a business user, analyst, or developer — just ask your question
 
 ---
 
+## 🧪 How to Run SubMind Locally
+
+### 🛠️ Prerequisites
+
+- Python 3.9+
+- [Google ADK (Agent Development Kit)](https://github.com/google/agent-development-kit)
+- Docker (for Postgres)
+- MongoDB Atlas or a local MongoDB instance
+
+```bash
+git clone https://github.com/yourusername/submind.git
+cd submind
+pip install -r requirements.txt
+adk web
+```
+
 ## 📸 Demo Preview
 
 > "Show all UPI payments and related order info"
@@ -32,25 +48,6 @@ Whether you're a business user, analyst, or developer — just ask your question
 ![Screenshot from 2025-06-22 12-24-51](https://github.com/user-attachments/assets/9deeb92a-8a3f-42f2-80fb-4c36e2fe83c2)
 
 ---
-
-## 🧪 How to Run SubMind Locally
-
-### 🛠️ Prerequisites
-
-- Python 3.9+
-- [Google ADK (Agent Development Kit)](https://github.com/google/agent-development-kit)
-- Docker (for Postgres)
-- MongoDB Atlas or a local MongoDB instance
-
----
-
-### ⚙️ 1. Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/submind.git
-cd submind
-adk web
-```
 
 
 ## 🧱 Architecture
