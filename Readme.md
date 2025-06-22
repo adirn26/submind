@@ -26,7 +26,32 @@ Whether you're a business user, analyst, or developer — just ask your question
 → routes to Mongo Agent for `orders`  
 → merges and summarizes
 
+![Screenshot from 2025-06-22 12-30-39](https://github.com/user-attachments/assets/a5a418b8-bce4-49a4-90c6-645c5d7e36d7)
+![Screenshot from 2025-06-22 12-30-28](https://github.com/user-attachments/assets/1238d29f-afc9-4f34-94ee-f175d811e660)
+![Screenshot from 2025-06-22 12-30-05](https://github.com/user-attachments/assets/6057235c-2816-41c3-bd7a-90f8f0eda9d0)
+![Screenshot from 2025-06-22 12-24-51](https://github.com/user-attachments/assets/9deeb92a-8a3f-42f2-80fb-4c36e2fe83c2)
+
 ---
+
+## 🧪 How to Run SubMind Locally
+
+### 🛠️ Prerequisites
+
+- Python 3.9+
+- [Google ADK (Agent Development Kit)](https://github.com/google/agent-development-kit)
+- Docker (for Postgres)
+- MongoDB Atlas or a local MongoDB instance
+
+---
+
+### ⚙️ 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/submind.git
+cd submind
+adk web
+```
+
 
 ## 🧱 Architecture
 
