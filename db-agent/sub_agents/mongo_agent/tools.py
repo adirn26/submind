@@ -69,7 +69,8 @@ async def call_db_aggregate(
     atlas_uri = os.getenv("ATLAS_URI")
     dbname = os.getenv("ATLAS_DBNAME")
     client = AtlasClient(atlas_uri, dbname)
-    return client.run_aggregate_pipeline(collection_name, pipeline)
+    result = client.run_aggregate_pipeline(collection_name, pipeline)
+    return convert_objectid(result)
 
 async def call_db_get_info_collection(tool_context: ToolContext):
     """Tool to get metadata from the 'info_collection' collection."""

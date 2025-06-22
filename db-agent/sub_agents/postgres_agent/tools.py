@@ -30,16 +30,26 @@ def get_postgres_connection():
 
 
 async def call_pg_query(sql: str, tool_context: ToolContext):
-    """Tool to execute a raw SQL SELECT query."""
-    conn = get_postgres_connection()
-    cur = conn.cursor(cursor_factory=RealDictCursor)
-    cur.execute(sql)
-    rows = cur.fetchall()
-    cur.close()
-    conn.close()
-    return json_safe(rows)
-
-
+    """Tool to execute a raw SQL SELECT query with error handling."""
+    conn = None
+    try:
+        conn = get_postgres_connection()
+        cur = conn.cursor(cursor_factory=RealDictCursor)
+        cur.execute(sql)
+        rows = cur.fetchall()
+        return json_safe(rows)
+    except Exception as e:
+        return {"error": f"Failed to execute query: {str(e)}"}
+    finally:
+        if conn:
+            try:
+                cur.close()
+            except Exception:
+                pass
+            try:
+                conn.close()
+            except Exception:
+                pass
 
 async def call_pg_schema_info(tool_context: ToolContext):
     """Tool to fetch schema info from Postgres."""
